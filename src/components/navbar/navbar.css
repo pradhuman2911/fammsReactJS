@@ -1,0 +1,77 @@
+
+:root {
+    --links-color: #131313;
+    --hover-color: #f7444e;
+    --theme-color: #f7444e;
+    --play-text: "Playfair Display", serif;
+  }
+
+/* navbar started */
+
+.logo {
+  width: 250px;
+}
+.logo img {
+  width: 100%;
+}
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px 0px;
+  }
+  .links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+  .links a {
+    font-size: medium;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--links-color);
+  }
+  .links li a {
+    display: flex;
+    gap: 7px;
+    align-items: end;
+  }
+  .links a:hover {
+    color: var(--hover-color);
+  }
+
+  .pg-down{
+    position: relative;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: -10%;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      z-index: 10;
+    }
+    
+    .dropdown-item {
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .dropdown-link {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .dropdown-link:hover {
+      background-color: #f1f1f1;
+    }
+    
+    .links .pg-down:hover .dropdown{
+      display: block;
+    }

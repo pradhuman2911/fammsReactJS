@@ -1,0 +1,55 @@
+
+/* Arrivals section start */
+
+.arrivals {
+    display: flex;
+    justify-content: start;
+    background: url("../../assets/images/arrival-bg.png");
+    height: 70vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color: #d4ced0;
+    background-position: 250px;
+  }
+  .arrival-text {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: absolute;
+    right: 250px;
+    top: 120px;
+  }
+  .arrival-text h2 {
+    color: #002c3e;
+    font-family: var(--play-text);
+    font-size: 4.5rem;
+    font-weight: 700;
+  }
+  .arrival-text p {
+    line-height: 25px;
+  }
+  .arrival-text button {
+    width: fit-content;
+    border: none;
+  }
+  .arrival-text button a {
+    display: inline-block;
+    padding: 12px 45px;
+    background-color: var(--hover-color);
+    border: 1px solid var(--hover-color);
+    /* font-weight: 700; */
+    /* border-radius: 0; */
+    color: #ffffff;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+  }
+  .arrival-text button :hover {
+    color: var(--hover-color);
+    background-color: #d4ced0;
+  }
+  
+  /* Arrivals section ends */

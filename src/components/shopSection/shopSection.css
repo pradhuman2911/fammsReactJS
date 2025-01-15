@@ -1,0 +1,60 @@
+
+/* Shop section start */
+.services {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: white;
+  }
+  .service-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 260px;
+    /* height: 260px; */
+    background-color: #002c3e;
+    text-align: center;
+    margin-top: 45px;
+    padding: 50px 50px;
+  }
+  .service-box img {
+    width: 55px;
+    height: auto;
+  }
+  .shop {
+    text-align: center;
+    padding: 60px 0px;
+  }
+  .shop h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: var(--play-text);
+  }
+  
+  
+  .shop h1{
+    position: relative;
+  }
+  
+  .shop h1::after{
+    content: "";
+    position: absolute;
+    background-color: var(--hover-color);
+    width:0px;
+    height:10px;
+    bottom:-10px;
+    left: 530px;
+    transition: 1s ease;
+  
+  }
+  .shop h1:hover::after{
+    width: 460px;
+    cursor: pointer;
+  }
+  
+  /* Shop section ends */
+  
