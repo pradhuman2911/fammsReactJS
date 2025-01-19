@@ -1,8 +1,4 @@
-// import Button from './components/Button'
-// import UseState from './components/hooks/UseState';
-// import UseEffect from './components/hooks/UseEffect';
-// import UseRef from './components/hooks/UseRef';
-// import UseMemo from './components/hooks/UseMemo';
+
 import Navbar from './components/navbar/Navbar';
 import Hero from './components/hero/Hero';
 import {BrowserRouter ,Route ,Routes} from "react-router-dom";
@@ -30,17 +26,6 @@ const App = ()=>{
     <Footer/>
     </BrowserRouter>
 
-
-{/* <UseState/> */}
-{/* <UseEffect/> */}
-{/* <UseRef/> */}
-{/* <UseMemo/> */}
-
-    {/* <Navbar/>
-    <Hero/>
-    <Gallery/> */}
-    
-{/* <Button/> */}
     </>
   )
 }

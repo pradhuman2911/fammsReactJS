@@ -26,10 +26,7 @@ const Hero = ()=>{
       <div className="header-text">
         <h1>Sale 20% Off <span>On Everything</span></h1>
         <p>
-          Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam
-          fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat
-          molestias, veniam, vel architecto veritatis delectus repellat modi
-          impedit sequi.
+        Enjoy exclusive savings on all our products! Shop now and take advantage of this limited-time offer to elevate your style, enhance your space, or find the perfect gift.
         </p>
         <button><Link to="/">Shop Now</Link></button>
       </div>

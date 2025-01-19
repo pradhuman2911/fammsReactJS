@@ -68,17 +68,18 @@ footer {
     align-self: start;
   }
   .news-letter a {
-    color: #fff;
     background-color: var(--hover-color);
+    color: #ffffff;
+    transition: all 0.3s;
     padding: 15px 15px;
     font-size: 15px;
-    box-shadow: none;
-    border: none;
-    font-weight: 600;
+    /* box-shadow: none; */
+    /* border: none; */
+    font-weight: 500;
     align-self: start;
   }
   .news-letter a :hover {
-    color: black;
+    color: #222;
     transition: 0.5s ease-in-out;
   }
 

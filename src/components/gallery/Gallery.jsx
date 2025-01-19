@@ -13,9 +13,9 @@ const Gallery = () => {
 
       <div className="our-products">
             {
-                product.map((item)=>{
+                product.map((item,index)=>{
                     return(
-                    <Cards category={item.cate} price={item.price} image={item.image}/>
+                    <Cards key={item.id || index} category={item.cate} price={item.price} image={item.image}/>
                     )
                 })
             }

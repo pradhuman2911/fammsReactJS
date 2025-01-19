@@ -9,12 +9,11 @@ const SubscribeSection = () => {
         <div className="subscribe">
       <h3>Subscribe To Get Discount Offers</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor
+        Be the first to know about our latest discounts, sales, and special promotions. Sign up now and save more on your next purchase!
       </p>
       <form>
         <input type="email" placeholder="Enter Your Email" id="email" />
-        <button><Link to="/">Subscribe</Link></button>
+        <Link to="/">Subscribe</Link>
       </form>
     </div>
 

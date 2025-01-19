@@ -15,9 +15,9 @@ const Footer = () => {
     <div className="logo-img">    
       <img src={logo} alt=""/>
     </div>
-      <p><b>ADDRESS:</b>28 White tower, Street Name New York City, USA</p>
-      <p><b>TELEPHONE:</b>+91 987 654 3210</p>
-      <p><b>EMAIL:</b>yourmain@gmail.com</p>
+    <p><strong>Address:</strong> 123 Fake Street, Imaginary Colony, Mumbai, Maharashtra, India</p>
+    <p><strong>Telephone:</strong> +91 900 123 4567</p>
+    <p><strong>Email:</strong> demoemail@example.com</p>
     </div>
 
     <div className="menu">
@@ -44,13 +44,13 @@ const Footer = () => {
   </ul>
 </div>
 
-<div className="news-letter">
-  <h3>NEWSLETTER</h3>
-   <p>Subscribe by our newsletter and get update protidin.</p>
-  <form >
-   <input type="email" placeholder="Enter Your Email" id="email" />
-   <a id="email"><Link to="/">Subscribe</Link></a>
-  </form>
+  <div className="news-letter">
+    <h3>NEWSLETTER</h3>
+    <p>Subscribe to our newsletter and get daily updates.</p>
+    <form >
+    <input type="email" placeholder="Enter Your Email" id="email" />
+    <a id="email"><Link to="/">Subscribe</Link></a>
+    </form>
 
 </div>
 

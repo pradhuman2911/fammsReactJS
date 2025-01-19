@@ -24,10 +24,7 @@ const Testimonial = () => {
             <h5>Anna Trevor</h5>
             <h6>Customer</h6>
             <p>
-              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque
-              animi sint unde quis reprehenderit, et, perspiciatis, debitis
-              totam est deserunt eius officiis ipsum ducimus ad labore modi
-              voluptatibus accusantium sapiente nam! Quaerat.
+            I had an amazing experience! The service was excellent, and the quality exceeded my expectations. I will definitely be coming back for more.
             </p>
           </div>
         </div>

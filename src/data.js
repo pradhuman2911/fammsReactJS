@@ -10,10 +10,6 @@ import p9 from "./assets/images/women2.png";
 import p10 from "./assets/images/women3.png";
 import p11 from "./assets/images/women4.png";
 
-import img1 from './assets/img1.jpg';
-import img2 from './assets/img2.jpg';
-import img3 from './assets/img3.jpg';
-import img4 from './assets/img4.jpg';
 
 export const product = [
   {
@@ -82,28 +78,4 @@ export const product = [
     cate: "Women's Dress",
     price: 75,
   },
-];
-
-
-export const bannerText =[
-    {   id:1,
-        heading:"111111111 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam vero minima",
-        para:"111111111111 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem asperiores, quae voluptatum id placeat perspiciatis sequi doloremque ",
-        image:img1,
-    },
-    {   id:2,
-        heading:"22222222 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam vero minima",
-        para:"22222222 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem asperiores, quae voluptatum id placeat perspiciatis sequi doloremque ",
-        image:img2,
-    },
-    {   id:3,
-        heading:"3333333 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam vero minima",
-        para:"3333333 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem asperiores, quae voluptatum id placeat perspiciatis sequi doloremque ",
-        image:img3,
-    },
-    {   id:4,
-        heading:"444444444 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam vero minima",
-        para:"444444444 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem asperiores, quae voluptatum id placeat perspiciatis sequi doloremque ",
-        image:img4,
-    },
 ];
