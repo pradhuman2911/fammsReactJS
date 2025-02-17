@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
 import { FaCartShopping } from 'react-icons/fa6';
-import './Navbar.css';
+import './navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
