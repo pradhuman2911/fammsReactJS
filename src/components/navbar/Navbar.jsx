@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaSearch, FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
 import { FaCartShopping } from 'react-icons/fa6';
 import './navbar.css';
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +30,7 @@ const Navbar = () => {
         <div className="navbar-main">
           {/* Logo */}
           <div className="logo">
-            <img src="./src/assets/logo.png" alt="logo" />
+            <img src={logo} alt="logo" />
           </div>
 
           {/* Mobile menu button */}
