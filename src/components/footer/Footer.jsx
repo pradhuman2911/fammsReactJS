@@ -49,7 +49,7 @@ const Footer = () => {
     <p>Subscribe to our newsletter and get daily updates.</p>
     <form >
     <input type="email" placeholder="Enter Your Email" id="email" />
-    <a id="email"><Link to="/">Subscribe</Link></a>
+    <button id="email"><Link to="/">Subscribe</Link></button>
     </form>
 
 </div>

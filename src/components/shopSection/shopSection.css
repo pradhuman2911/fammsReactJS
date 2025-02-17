@@ -1,60 +1,118 @@
+/* Shop section styles */
+.shop {
+  text-align: center;
+  padding: 60px 20px;
+  width: 100%;
+}
 
-/* Shop section start */
+.shop h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: var(--play-text);
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.shop h1::after {
+  content: "";
+  position: absolute;
+  background-color: var(--hover-color);
+  width: 0;
+  height: 10px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 1s ease;
+}
+
+.shop h1:hover::after {
+  width: 200px;
+}
+
 .services {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    color: white;
-  }
-  .service-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    width: 260px;
-    /* height: 260px; */
-    background-color: #02425b;
-    text-align: center;
-    margin-top: 45px;
-    padding: 50px 50px;
-  }
-  .service-box img {
-    width: 55px;
-    height: auto;
-  }
-  .shop {
-    text-align: center;
-    padding: 60px 0px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  padding: 20px;
+}
+
+.service-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 260px;
+  min-height: 300px;
+  background-color: #02425b;
+  text-align: center;
+  padding: 30px 20px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+.service-box img {
+  width: 55px;
+  height: auto;
+}
+
+.service-box h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.service-box p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
   .shop h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    font-family: var(--play-text);
+    font-size: 3rem;
   }
   
-  
-  .shop h1{
-    position: relative;
+  .services {
+    gap: 20px;
   }
   
-  .shop h1::after{
-    content: "";
-    position: absolute;
-    background-color: var(--hover-color);
-    width:0px;
-    height:10px;
-    bottom:-10px;
-    left: 530px;
-    transition: 1s ease;
-  
+  .service-box {
+    width: calc(33.33% - 20px);
+    min-height: 280px;
   }
-  .shop h1:hover::after{
-    width: 460px;
-    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .shop h1 {
+    font-size: 2.5rem;
   }
   
-  /* Shop section ends */
+  .service-box {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .shop h1 {
+    font-size: 2rem;
+  }
   
+  .services {
+    flex-direction: column;
+  }
+  
+  .service-box {
+    width: 100%;
+    min-height: auto;
+  }
+  
+  .shop h1:hover::after {
+    width: 150px;
+  }
+}

@@ -1,38 +1,111 @@
-import React from 'react'
-import logo from '../../assets/logo.png' 
-import './navbar.css'
-import {FaSearch ,FaCaretDown } from  "react-icons/fa"
-import {FaCartShopping } from  "react-icons/fa6"
-import {Link} from "react-router-dom";
+// Navbar.js
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { FaSearch, FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
+import { FaCartShopping } from 'react-icons/fa6';
+import './Navbar.css';
+
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle navbar background on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 80) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-container">
+        <div className="navbar-main">
+          {/* Logo */}
+          <div className="logo">
+            <img src="./src/assets/logo.png" alt="logo" />
+          </div>
 
-<nav className="navbar">
-      <div className="logo">
-        <img src={logo} alt="logo" width="150px" />
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="mobile-menu-button"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+
+          {/* Desktop Navigation */}
+          <div className="desktop-nav">
+            <NavLinks />
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className={`mobile-nav ${isMenuOpen ? 'active' : ''}`}>
+          <NavLinks mobile />
+        </div>
       </div>
-      <div className="navlinks">
-        <ul className="links">
-          <li><Link to="/">HOME</Link></li>
-          <li className="pg-down">
-          <li><Link to="">PAGES<FaCaretDown className='down' /></Link></li>
-            <ul className="dropdown">
-              <li className="dropdown-item"><Link to="/about" class="dropdown-link">About</Link></li>
-              <li className="dropdown-item"><Link to="/testimonial" class="dropdown-link">Testimonial</Link></li>
-          </ul>
+    </nav>
+  );
+};
+
+const NavLinks = ({ mobile = false }) => {
+  const [pagesOpen, setPagesOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
+
+  const togglePages = () => {
+    setPagesOpen(!pagesOpen);
+  };
+
+  return (
+    <ul className={`nav-links ${mobile ? 'mobile' : ''}`}>
+      <li className={activeLink === 'home' ? 'active' : ''}>
+        <Link to="/" onClick={() => setActiveLink('home')}>HOME</Link>
+      </li>
+      <li className={`pages-dropdown ${pagesOpen ? 'active' : ''}`}
+       onMouseEnter={() => setPagesOpen(true)}
+       onMouseLeave={() => setPagesOpen(false)}
+      >
+        <button
+          className="dropdown-trigger"
+          onClick={togglePages}
+        >
+          PAGES
+          <FaCaretDown className={`dropdown-icon ${pagesOpen ? 'open' : ''}`} />
+        </button>
+        <ul className="dropdown-menu">
+          <li>
+            <Link to="/about" onClick={() => setActiveLink('about')}>About</Link>
           </li>
-          <li><Link to="/products">PRODUCTS</Link></li>
-          <li><Link to="/blog">BLOG</Link></li>
-          <li><Link to="/contact">CONTACT</Link></li>
-          <li><Link to="/"><FaSearch/></Link></li>
-          <li><Link to="/"><FaCartShopping /></Link></li>
-
-          
+          <li>
+            <Link to="/testimonial" onClick={() => setActiveLink('testimonial')}>Testimonial</Link>
+          </li>
         </ul>
-      </div>
-</nav>
+      </li>
+      <li className={activeLink === 'products' ? 'active' : ''}>
+        <Link to="/products" onClick={() => setActiveLink('products')}>PRODUCTS</Link>
+      </li>
+      <li className={activeLink === 'blog' ? 'active' : ''}>
+        <Link to="/blog" onClick={() => setActiveLink('blog')}>BLOG</Link>
+      </li>
+      <li className={activeLink === 'contact' ? 'active' : ''}>
+        <Link to="/contact" onClick={() => setActiveLink('contact')}>CONTACT</Link>
+      </li>
+      <li className="icon-link">
+        <Link to="#"><FaSearch /></Link>
+      </li>
+      <li className="icon-link">
+        <Link to="#"><FaCartShopping /></Link>
+      </li>
+    </ul>
+  );
+};
 
-)
-}
-
-export default Navbar
+export default Navbar;

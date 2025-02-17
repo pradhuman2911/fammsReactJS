@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Montserrat", sans-serif;
-}
+/* hero.css */
 :root {
   --links-color: #131313;
   --hover-color: #f7444e;
@@ -10,64 +6,210 @@
   --play-text: "Playfair Display", serif;
 }
 
-body {
-  background-color: white;
-}
-
-/* hero Section starts */
-
+/* Hero Section */
 .hero-section {
-  background: url(../../assets/images/slider-bg.jpg);
-  height: 87.4vh;
-  background-size: cover;
-  padding: 10px 0px;
   position: relative;
-}
-.header-text {
-  width: 32%;
+  min-height: 100vh;
+  background: url(../../assets/images/slider-bg.jpg) no-repeat center center;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  position: absolute;
-  left: 150px;
-  top: 100px;
+  align-items: center;
+  padding: 80px 20px;
+  overflow: hidden;
 }
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.8) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1;
+}
+
+.header-text {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  margin-left: 10%;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
 .header-text h1 {
   color: var(--hover-color);
   font-family: var(--play-text);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  opacity: 0;
 }
-.header-text h1,
-span {
-  color: var(--hover-color);
-  font-family: var(--play-text);
-  font-size: 4.5rem;
-}
+
 .header-text span {
   color: #002c3e;
+  display: block;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.header-text p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #333;
+  opacity: 0;
+  max-width: 90%;
 }
 
 .header-text button {
-  width: fit-content;
+  background: none;
   border: none;
+  padding: 0;
+  opacity: 0;
 }
 
 .header-text a {
   display: inline-block;
-  padding: 12px 45px;
+  padding: 15px 45px;
   background-color: var(--hover-color);
-  border: 1px solid var(--hover-color);
   color: #ffffff;
-  border-radius: 0;
-  transition: all 0.3s;
+  border: 2px solid var(--hover-color);
+  border-radius: 4px;
   font-weight: 700;
   text-decoration: none;
-}
-.header-text p {
-  line-height: 25px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.header-text button :hover {
-  color: var(--hover-color);
-  background-color: #c0c0c0ca;
+.header-text a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
 }
-/* hero Section ends */
+
+.header-text a:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.header-text a:hover {
+  background-color: #e6323d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(247, 68, 78, 0.3);
+}
+
+/* Animations */
+.animate-slide-down {
+  animation: slideDown 1s ease-out 0.3s forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out 0.6s forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out 0.9s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .header-text {
+    margin-left: 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    background: url(../../assets/images/slider-bg-mobile.jpg) no-repeat center center;
+    background-size: contain;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .header-text {
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .header-text p {
+    margin: 20px auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+
+  .header-text a {
+    padding: 12px 30px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  .header-text a:hover {
+    background-color: var(--hover-color);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .header-text a:active {
+    background-color: #e6323d;
+    transform: translateY(1px);
+  }
+}

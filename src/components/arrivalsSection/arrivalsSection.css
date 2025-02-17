@@ -1,55 +1,110 @@
-
-/* Arrivals section start */
-
+/* Arrivals section styles */
 .arrivals {
-    display: flex;
-    justify-content: start;
-    background: url("../../assets/images/arrival-bg.png");
-    height: 70vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: relative;
-    background-color: #d4ced0;
-    background-position: 250px;
-  }
+  display: flex;
+  justify-content: flex-start;
+  background: url("../../assets/images/arrival-bg.png");
+  min-height: 70vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: #d4ced0;
+  background-position: 250px;
+  padding: 40px 20px;
+}
+
+.arrival-text {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: absolute;
+  right: 250px;
+  top: 120px;
+}
+
+.arrival-text h2 {
+  color: #002c3e;
+  font-family: var(--play-text);
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.arrival-text p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+.arrival-text button {
+  width: fit-content;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.arrival-text button a {
+  display: inline-block;
+  padding: 12px 45px;
+  background-color: var(--hover-color);
+  border: 1px solid var(--hover-color);
+  color: #ffffff;
+  transition: all 0.3s;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.arrival-text button a:hover {
+  color: var(--hover-color);
+  background-color: #d4ced0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
   .arrival-text {
-    width: 32%;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    position: absolute;
-    right: 250px;
-    top: 120px;
-  }
-  .arrival-text h2 {
-    color: #002c3e;
-    font-family: var(--play-text);
-    font-size: 4.5rem;
-    font-weight: 700;
-  }
-  .arrival-text p {
-    line-height: 25px;
-  }
-  .arrival-text button {
-    width: fit-content;
-    border: none;
-  }
-  .arrival-text button a {
-    display: inline-block;
-    padding: 12px 45px;
-    background-color: var(--hover-color);
-    border: 1px solid var(--hover-color);
-    /* font-weight: 700; */
-    /* border-radius: 0; */
-    color: #ffffff;
-    transition: all 0.3s;
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
-  }
-  .arrival-text button :hover {
-    color: var(--hover-color);
-    background-color: #d4ced0;
+    right: 150px;
+    width: 40%;
   }
   
-  /* Arrivals section ends */
+  .arrival-text h2 {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .arrivals {
+    background: url("../../assets/images/arrival-bg-mobile.png");
+    background-position: center;
+    justify-content: center;
+    background-size: cover;
+  }
+  
+  .arrival-text {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 80%;
+    max-width: 500px;
+    background-color: rgba(212, 206, 208, 0.231);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .arrival-text h2 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .arrival-text {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .arrival-text h2 {
+    font-size: 2.5rem;
+  }
+  
+  .arrival-text button a {
+    padding: 10px 30px;
+  }
+}

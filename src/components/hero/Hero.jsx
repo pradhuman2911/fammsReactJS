@@ -1,73 +1,57 @@
+// Hero.js
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './hero.css';
 import Testimonial from '../testimonial/Testimonial';
 import Gallery from '../gallery/Gallery';
-import { Link } from 'react-router-dom';
 import ShopSection from '../shopSection/ShopSection';
 import SubscribeSection from '../subscribeSection/SubscribeSection';
 import ArrivalsSection from '../arrivalsSection/ArrivalsSection';
 
-// import {bannerText} from '../../data.js';
-// // import Swiper core and required modules
-// import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// // Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
-// import Banner from './Banner.jsx';
+const Hero = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const headerText = document.querySelector('.header-text');
+      const scrollPosition = window.scrollY;
+      
+      if (headerText) {
+        const opacity = 1 - (scrollPosition * 0.003);
+        const transform = `translateY(${scrollPosition * 0.3}px)`;
+        headerText.style.opacity = opacity > 0 ? opacity : 0;
+        headerText.style.transform = transform;
+      }
+    };
 
-const Hero = ()=>{
-    return(
-      <>
-    {/* <!--hero Section starts  --> */}
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    <header className="hero-section">
-      <div className="header-text">
-        <h1>Sale 20% Off <span>On Everything</span></h1>
-        <p>
-        Enjoy exclusive savings on all our products! Shop now and take advantage of this limited-time offer to elevate your style, enhance your space, or find the perfect gift.
-        </p>
-        <button><Link to="/">Shop Now</Link></button>
-      </div>
-    </header>
-    {/* <!-- Hero Section ends  --> */}
+  return (
+    <>
+      <header className="hero-section">
+        <div className="hero-overlay"></div>
+        <div className="header-text">
+          <h1 className="animate-slide-down">
+            Sale 20% Off <span>On Everything</span>
+          </h1>
+          <p className="animate-slide-up">
+            Enjoy exclusive savings on all our products! Shop now and take advantage 
+            of this limited-time offer to elevate your style, enhance your space, 
+            or find the perfect gift.
+          </p>
+          <button className="animate-fade-in">
+            <Link to="/">Shop Now</Link>
+          </button>
+        </div>
+      </header>
 
-<ShopSection/>
-<ArrivalsSection/>
-<Gallery/>
-<SubscribeSection/>
-<Testimonial/>
+      <ShopSection />
+      <ArrivalsSection />
+      <Gallery />
+      <SubscribeSection />
+      <Testimonial />
+    </>
+  );
+};
 
-
-      </>
-    )
-
-
-        {/* <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      spaceBetween={50}
-      slidesPerView={1}
-      navigation
-      loop={true}
-      autoplay={{ delay:3000 }}
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-    > 
-    {
-      bannerText.map((item)=>{
-        return(
-          <SwiperSlide >
-          <Banner  className='outer' heading={item.heading} para={item.para} image={item.image} />
-    </SwiperSlide>
-        )
-      })
-    }
-    </Swiper> */}
-
-
-}
 export default Hero;
